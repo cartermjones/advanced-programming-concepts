@@ -24,7 +24,8 @@ public class Manager extends Employee {
 		return promotionBonus;
 	}
 	
-	public void raiseSalary(int percent) {
+	public double raiseSalary(int percent) {
 		mySalary = mySalary + 0.95 * percent * 0.01 * mySalary + promotionBonus;
+		return mySalary;
 	}
 }
