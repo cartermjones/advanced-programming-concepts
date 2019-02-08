@@ -29,12 +29,14 @@ public class Employee implements Traits {
 		return myAge;
 	}
 	
-	public void raiseSalary(int percent) {
+	public double raiseSalary(int percent) {
 		mySalary = mySalary + 0.95 * percent * 0.01 * mySalary;
+		return mySalary;
 	}
 	
-	public void raiseSalary(int percent, int cost_of_living_adjustment) {
+	public double raiseSalary(int percent, int cost_of_living_adjustment) {
 		mySalary = mySalary + 0.95 * percent * 0.01 * mySalary + cost_of_living_adjustment * 0.01 * mySalary;
+		return mySalary;
 
 	}
 }
