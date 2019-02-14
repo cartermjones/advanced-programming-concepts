@@ -52,19 +52,19 @@ public class EmployeeUserInterface extends JFrame {
 		
 		//Here we the define the JLabels and JTextFields that we'll need
 		employeeName = new JLabel("Name");
-		nameField = new JTextField("Name", 20);
+		nameField = new JTextField(20);
 		
 		employeeTitle = new JLabel("Title");
-		titleField = new JTextField("Title", 20);
+		titleField = new JTextField(20);
 		
 		employeeAge = new JLabel("Age");
-		ageField = new JTextField("Age", 20);
+		ageField = new JTextField(20);
 		
 		employeeSalary = new JLabel("Salary");
-		salaryField = new JTextField("Salary", 20);
+		salaryField = new JTextField(20);
 		
 		raisePercent = new JLabel("Raise %");
-		percentField = new JTextField("Raise %", 20);
+		percentField = new JTextField(20);
 		
 		//Here we define the JButton we'll need
 		calculate = new JButton("Calculate");
@@ -82,13 +82,19 @@ public class EmployeeUserInterface extends JFrame {
 		add(percentField);
 		add(calculate);
 		
-		//And here we implement the logic for the calculate button.
-		//When a user clicks the button, it will dynamically create an Employee object with data from the text fields.
-		//It will then use that new Employee's raiseSalary() method to generate a raised salary, which will be stored and displayed 
-		//in a JOptionPane.
+		/**
+		 * And here we implement the logic for the calculate button.
+		 * When a user clicks the button, it will dynamically create an Employee object with data from the text fields.
+			It will then use that new Employee's raiseSalary() method to generate a raised salary, which will be stored and displayed 
+			in a JOptionPane.
+			This logic is nested in a fairly standard try/catch block that will output a warning message 
+			in the event that one of the input fields is improperly formatted or missing altogether.
+		 */
+		
 		calculate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				
+				try {
 				name = nameField.getText();
 				title = titleField.getText();
 				salary = salaryField.getText();
@@ -98,11 +104,19 @@ public class EmployeeUserInterface extends JFrame {
 				percent = percentField.getText();
 				numPercent = Integer.parseInt(percent);
 				
-				Employee employee = new Employee(name, title, numSalary, numAge);
-				showRaise = "Salary Raised! " + Double.toString(employee.raiseSalary(numPercent));
-				JOptionPane.showMessageDialog(parent, showRaise);
+				
+					Employee employee = new Employee(name, title, numSalary, numAge);
+					showRaise = "Salary Raised! " + Double.toString(employee.raiseSalary(numPercent));
+					JOptionPane.showMessageDialog(parent, showRaise);
+				}
+				
+				catch (Exception exception) {
+					JOptionPane.showMessageDialog(null, "Error: One or more of your fields is formatted incorrectly and/or missing. Try again.");
+				}
 			}
 		});
 		
 	}
+	
+}
 	
