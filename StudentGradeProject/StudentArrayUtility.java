@@ -28,7 +28,7 @@ public class StudentArrayUtility {
 						finalGrade = columnValues[6];
 						
 						student = new Student(name, HW1, HW2, HW3, midterm, project, finalGrade);
-						//String[] studentInfo = {student.getName(), student.getHW1(), student.getHW3(), student.getMidterm(), student.getProject(), student.getFinalGrade()};
+						
 						studentArray[i] = student;
 					
 						i++;
