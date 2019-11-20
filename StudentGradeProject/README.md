@@ -6,4 +6,4 @@ The goal of this project was to ingest a group of student grades stored in a tex
 
 Both projects required the use of both object-oriented and generic programming principles and techniques, such as class discovery, inheritance, polymorphism, and further provided the projects provided a good experience in managing a project under a deadline.
 
-![Screenshot](screenshots/studentgradeapp.png) 
+![Screenshot](studentgradeapp.png) 
